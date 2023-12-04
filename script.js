@@ -343,7 +343,7 @@ function generateMovieHTML(movie) {
           <a class="play_trailer" href="#" data-bs-toggle="modal" data-bs-target="#trailerModal" onclick="playTrailer(${
             movie.id
           })">
-          <img class="trailer_btn" src="/icons/trailerbtn.svg" alt="trailer" draggable="false" />
+          <img class="trailer_btn" src="icons/trailerbtn.svg" alt="trailer" draggable="false" />
         </a>
         </div>
       </div>
