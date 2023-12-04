@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+  <link rel="stylesheet" href="contactUsStyle.css" />
+  <script src="contactUsScript.js" defer></script>
+  <title>cineBro | Contact Us</title>
+</head>
+<body>
+  <header>
+    <div id="header">
+      <div id="menu">
+        <div id="menu-bar" onclick="menuOnClick()">
+          <div id="bar1" class="bar"></div>
+          <div id="bar2" class="bar"></div>
+          <div id="bar3" class="bar"></div>
+        </div>
+        <nav class="nav" id="nav">
+          <ul>
+            <li><i class="fas fa-home"></i><a href="#">Home</a></li>
+              <li><i class="fas fa-th-list"></i><a href="#">Categories</a></li>
+              <li><i class="fas fa-tv"></i><a href="#">TV Series</a></li>
+              <li><i class="fas fa-film"></i><a href="#">Movies</a></li>
+              <li><i class="far fa-calendar"></i><a href="#">Calendar</a></li>
+              <li><i class="fas fa-info-circle"></i><a href="#">About Us</a></li>
+              <li><i class="fas fa-search"></i><a href="#">Custom Result</a></li>
+              <li><i class="fas fa-address-book"></i><a href="#">Contact Us</a></li>
+          </ul>
+        </nav> 
+      </div>
+      <div class="menu-bg" id="menu-bg"></div>
+      <div class="container">
+        <div class="row">
+          <div class="logo">
+            <img id="logo" src="./assets/images/cB_logo.png" alt="cineBro" draggable="false" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="formContainer">
+        <div class="title">Inquiry Form</div>
+        <form id="movieReviewForm" action="#" method="get">
+            <div class="clienInformation">
+                <div class="inputBox">
+                    <span class="details">Name</span>
+                    <input type="text" id="name" placeholder="First Name and Last Name">
+                </div>
+                <div class="error" id="nameError"></div>
+                <div class="inputBox">
+                    <span class="details">Email Address</span>
+                    <input type="email" id="email" placeholder="enter a valid Email Address">
+                </div>
+                <div class="error" id="emailError"></div>
+                <div class="inputBox">
+                    <span class="details">Business Industry Type</span>
+                    <input type="text" id="businessType" placeholder="Enter Business Industry">
+                </div>
+                <div class="error" id="businessTypeError"></div>
+                <div class="inputBox">
+                    <span class="details">Website Type</span>
+                    <input type="text" id="type" placeholder="Static Page or Dynamic Page">
+                </div>
+                <div class="error" id="typeError"></div>
+                <div class="inputBox">
+                    <span class="details">Budget</span>
+                    <input type="number" id="budget" placeholder="Input your Budget in CAD">
+                </div>
+                <div class="error" id="budgetError"></div>
+                <div class="inputBox">
+                    <span class="details">Meeting Date</span>
+                    <input type="text" id="date" placeholder="MM/DD/YYYY">
+                </div>
+                <div class="error" id="dateError"></div>
+                <div class="inputBox">
+                    <span class="details">Meeting Time</span>
+                    <input type="text" id="time" placeholder="HH:MM AM/PM" >
+                </div>
+                <div class="error" id="timeError"></div>
+                <div class="inputBox">
+                    <span class="details">Description</span>
+                    <input type="text" id="desciption" placeholder="Describe your website idea in mind">
+                </div>
+                <div class="error" id="desciptionError"></div>
+                <div class="inputBox">
+                    <span class="details">Attached your sketch here!</span>
+                    <input type="file" id="attachment" name="attachment" accept=".png, .jpg">
+                </div>
+                <div class="error" id="attachmentError"></div>
+
+            </div>
+            <div class="clientType">
+                <input type="radio" name="type" id="dot-1">
+                <input type="radio" name="type" id="dot-2">
+                <div class="error" id="dotError"></div>
+                <span class="clientTypeTitle">Privacy Statement</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="type">Agree</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="type">Don't Agree</span>
+                    </label>
+                </div>
+            </div>
+            <div class="button">
+                <input type="submit" value="Send">
+            </div>
+        </form>
+    </div>
+  </main>
+  <footer>
+    <section id="footer">
+      <div class="container">
+        <div class="row credit">
+          <div class="col-md-3 support">
+            <h6>Support</h6>
+            <a href="#">Privacy & Policy</a>
+            <a href="#">Term & Conditions</a>
+          </div>
+          <div class="col-md-2 services">
+            <h6>Our Services</h6>
+            <a href="#">About Us</a>
+          </div>
+          <div class="col-md-3 contact">
+            <h6>Contact Us</h6>
+            <a href="#"><img src="./assets/icons/instagram.svg" alt="instagram" /></a>
+            <a href="#"><img src="./assets/icons/facebook.svg" alt="facebook" /></a>
+            <a href="#"><img src="./assets/icons/twitter.svg" alt="twitter" /></a>
+            <a href="#"><img src="./assets/icons/email.svg" alt="email" /></a>
+          </div>
+        </div>
+        <p class="copyright">Copyright 2023 codeBros.</p>
+      </div>
+    </section>
+  </footer>
+ 
+  </div>
+</body>
+</html>
