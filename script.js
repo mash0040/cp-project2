@@ -500,7 +500,7 @@ function closeTrailer() {
   $("#trailerModal").modal("hide");
 }
 
-$("#nav ul li a").click(function (event) {
+$("#nav ul li a[href='#']").click(function (event) {
   const linkText = $(this).text().trim();
 
   const bannerHeading = document.querySelector(".banner-heading");
