@@ -518,3 +518,15 @@ $("#nav ul li a").click(function (event) {
   event.preventDefault();
   window.scrollTo(0, 0);
 });
+
+const ball = document.querySelector(".toggle-ball");
+const items = document.querySelectorAll(
+  "body,.movie-list-title,.navbar-container,.sidebar,.left-menu-icon,.toggle"
+);
+
+ball.addEventListener("click", () => {
+  items.forEach((item) => {
+    item.classList.toggle("active");
+  });
+  ball.classList.toggle("active");
+});

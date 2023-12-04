@@ -41,6 +41,11 @@ body {
   background-attachment: fixed;
 }
 
+body.active {
+    background: linear-gradient(to bottom right, white, rgb(175, 171, 171)) ;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 .navbar {
   background-color: var(--background_top_left);
   padding-top: 2rem;
@@ -578,4 +583,47 @@ body {
   font-size: 1.5em;
   color: white;
   margin-right: 8px;
+}
+
+header {
+  position: relative;
+}
+
+.toggle {
+  width: 80px;
+  height: 40px;
+  background-color: black;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 20px;
+  border:#fff solid 0.1rem;
+}
+
+.toggle-icon {
+  color: goldenrod;
+}
+
+.toggle-ball {
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  position: absolute;
+  right: 3px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 1s ease all;
+}
+
+.toggle.active {
+  background-color: white;
+}
+
+.toggle-ball.active {
+  background-color: black;
+  transform: translateX(-40px);
 }
