@@ -165,6 +165,7 @@ body {
 
 .search_input {
   position: relative;
+  border-radius: 50px;
 }
 
 .search_icon {
