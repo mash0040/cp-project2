@@ -5,8 +5,8 @@
 }
 
 :root{
-    --primary-color:#0c0c0c;
-    --secondary-color: #060607;
+    --primary-color:#080808;
+    --secondary-color: #0b0b0b;
 }
 
 body{
@@ -14,6 +14,42 @@ body{
     font-family: 'Poppins', sans-serif;
     margin: 0;
 }
+
+
+
+header {
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    background-color: var(--secondary-color);
+}
+
+.logo {
+    height: 50px;
+    margin-right: auto;
+
+    
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin-right: auto;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 
 
 header{
