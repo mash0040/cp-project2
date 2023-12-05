@@ -367,7 +367,9 @@ function generateMovieHTML(movie) {
           <a class="play_trailer" href="#" data-bs-toggle="modal" data-bs-target="#trailerModal" onclick="playTrailer(${
             movie.id
           })">
-          <img class="trailer_btn" src="icons/trailerbtn.svg" alt="trailer" draggable="false" />
+          <span class="trailer_btn">
+          <i id='trailer_icon' class="fas fa-play"></i> <strong>Play Trailer</strong>
+        </span>
         </a>
         </div>
       </div>
@@ -555,7 +557,7 @@ $("#nav ul li a[href='#']").click(function (event) {
 
 const ball = document.querySelector(".toggle-ball");
 const items = document.querySelectorAll(
-  "body,.movie-list-title,.navbar-container,.sidebar,.left-menu-icon,.toggle"
+  ":root, body, .toggle, .contents"
 );
 
 ball.addEventListener("click", () => {
@@ -564,4 +566,5 @@ ball.addEventListener("click", () => {
   });
   ball.classList.toggle("active");
 });
+
 

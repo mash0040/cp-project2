@@ -28,6 +28,14 @@
   --button_color: #FF8906;
 }
 
+:root.active {
+  --font_color: #0F0E17;
+  --headline_color: #0F0E17;
+  --background_top_left: #white;
+  --background_bottom_right: #white;
+}
+
+
 * {
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -42,7 +50,7 @@ body {
 }
 
 body.active {
-    background: linear-gradient(to bottom right, white, rgb(175, 171, 171)) ;
+    background-color: white;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
@@ -132,12 +140,23 @@ body.active {
   color: var(--font_color);
 }
 
-.contents .trailer_btn {
+.trailer_btn {
   margin-top: 2.5rem;
+}
+.trailer_btn strong {
+  color: #FF8906;
+}
+
+#trailer_icon {
+  font-size: 1.1rem;
+  color: #FF8906;
 }
 
 .trailer_btn:hover {
   opacity: 0.5;
+}
+a {
+  text-decoration: none !important;
 }
 
 .modal[data-modal-color] {
