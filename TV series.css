@@ -28,6 +28,7 @@ header {
 .logo {
     height: 50px;
     margin-right: auto;
+    margin-left: 180px;
 
     
 }
@@ -61,7 +62,7 @@ header{
 
 .search{
     background-color: transparent;
-    border: 2px solid var(--primary-color);
+    border: 2px solid white;
     padding:0.5rem 1rem;
     border-radius: 50px;
     font-size: 1rem;
@@ -75,7 +76,7 @@ header{
 }
 
 .search::placeholder{
-    color: #7378c5;
+    color: white;
 }
 
 main{
