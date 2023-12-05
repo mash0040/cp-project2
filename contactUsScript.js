@@ -114,6 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
       clearError(descriptionError);
     }
 
+
     if (!privacyAgree.checked && !privacyDisagree.checked) {
       showError(dotError, "Please agree or disagree to the Privacy Statement.");
     } else {
