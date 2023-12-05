@@ -9,10 +9,14 @@ const IMAGE_URL = `https://image.tmdb.org/t/p/w200`;
 async function getMovies(url, container) {
   try {
     const response = await fetch(url);
-    const response_1 = await response.json();
-    return showMovies(response_1.results, container);
-  } catch (err) {
-    alert(err);
+    if (!response.ok) {
+      throw new Error(`Error: ${response.status} - ${response.statusText}`);
+    }
+    const responseData = await response.json();
+    return showMovies(responseData.results, container);
+  } catch (error) {
+    console.error('Error fetching movies:', error);
+    // Handle error display or logging in a non-intrusive way
   }
 }
 
@@ -31,7 +35,7 @@ function showPosters(movie) {
   const { title, name, poster_path } = movie;
   if (title !== undefined) {
     return `<div class="card poster_card">
-                <a href="#"><img class="poster_img img-fluid" src="${
+                <a href="moviedetails.html"><img class="poster_img img-fluid" src="${
                   IMAGE_URL + poster_path
                 }" alt="${title}" draggable="false"></a>
                 <div class="card-body">
@@ -40,7 +44,7 @@ function showPosters(movie) {
             </div>`;
   } else {
     return `<div class="card poster_card">
-                <a href="#"><img class="poster_img img-fluid" src="${
+                <a href="moviedetails.html"><img class="poster_img img-fluid" src="${
                   IMAGE_URL + poster_path
                 }" alt="${name}" draggable="false"></a>
                 <div class="card-body">
@@ -329,7 +333,7 @@ function cancelSurvey() {
 
 async function fetchData(genreId) {
   try {
-    console.log("Fetching data for genre ID:", genreId);
+    console.log("Fetching data for genre:", genreId);
     const apiKey = "03f3d7e5f31d26394ef7b7b263260b97";
     const apiUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&primary_release_date.gte=2023-08-01&primary_release_date.lte=2024-01-01&sort_by=popularity.desc&with_genres=${genreId}&api_key=${apiKey}`;
 
