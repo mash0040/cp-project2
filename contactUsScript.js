@@ -1,23 +1,4 @@
-(function () {
-    gsap.registerPlugin(ScrollTrigger);
-  
-    gsap.from(".navbar-brand, .navbar-toggler", {
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.3,
-      y: 10,
-    });
-  
-    gsap.from(".nav-item", {
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.2,
-      y: 30,
-      stagger: 0.2,
-    });
-})
-  
-    // Function to toggle the navigation bar
+// Function to toggle the navigation bar
     function menuOnClick() {
       document.getElementById("menu-bar").classList.toggle("change");
       document.getElementById("nav").classList.toggle("change");
