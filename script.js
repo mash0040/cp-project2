@@ -3,20 +3,23 @@ const API_KEY = `cdcbdcac2837a7886f31841cf04b185d`;
 const TRENDING_MOVIE = `${BASE_URL}/trending/all/week?api_key=${API_KEY}`;
 const POPULAR_MOVIE = `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
 const RATED_MOVIE = `${BASE_URL}/movie/top_rated?api_key=${API_KEY}`;
+const UPCOMING_MOVIE = `${BASE_URL}/movie/upcoming?api_key=${API_KEY}`;
 const IMAGE_URL = `https://image.tmdb.org/t/p/w200`;
 
-function getMovies(url, container) {
-  return fetch(url)
-    .then((response) => response.json())
-    .then((response) => showMovies(response.results, container))
-    .catch(function (err) {
-      alert(err);
-    });
+async function getMovies(url, container) {
+  try {
+    const response = await fetch(url);
+    const response_1 = await response.json();
+    return showMovies(response_1.results, container);
+  } catch (err) {
+    alert(err);
+  }
 }
 
 getMovies(TRENDING_MOVIE, ".trending_container");
 getMovies(POPULAR_MOVIE, ".popular_container");
 getMovies(RATED_MOVIE, ".rated_container");
+getMovies(UPCOMING_MOVIE, ".upcoming_container");
 
 function showMovies(movies, container) {
   let cards = "";
@@ -133,6 +136,23 @@ gsap.from(".title_rated", {
 
 gsap.from(".rated_container", {
   scrollTrigger: ".rated_container",
+  opacity: 0,
+  duration: 0.8,
+  delay: 0.8,
+  y: -30,
+  stagger: 0.6,
+});
+
+gsap.from(".title_upcoming", {
+  scrollTrigger: ".title_upcoming",
+  opacity: 0,
+  duration: 0.6,
+  delay: 0.4,
+  x: -30,
+});
+
+gsap.from(".upcoming_container", {
+  scrollTrigger: ".upcoming_container",
   opacity: 0,
   duration: 0.8,
   delay: 0.8,
@@ -491,6 +511,16 @@ function ratedSlideRight() {
     ratedIndex++;
     container.scrollLeft += posterWidth;
   }
+}
+
+function upcomingSlideLeft() {
+  const container = document.querySelector(".upcoming_container");
+  container.scrollLeft -= 200;
+}
+
+function upcomingSlideRight() {
+  const container = document.querySelector(".upcoming_container");
+  container.scrollLeft += 200;
 }
 
 function closeTrailer() {

@@ -252,6 +252,16 @@ body.active {
   font-weight: var(--bold);
 }
 
+#upcoming {
+  margin-top: 1.5rem;
+}
+
+.title_upcoming h1 {
+  font-size: var(--fonts_title);
+  line-height: var(--title);
+  font-weight: var(--bold);
+}
+
 #header {
   width: 100%;
   height: 80px;
@@ -342,13 +352,15 @@ body.active {
 
   .title_trending h1,
   .title_rated h1,
-  .title_popular h1 {
+  .title_popular h1,
+  .title_upcoming h1 {
     font-size: 18px;
   }
 
   #trending,
   #rated,
-  #popular {
+  #popular,
+  #upcoming {
     margin-top: 10px;
     margin-bottom: 0;
   }
