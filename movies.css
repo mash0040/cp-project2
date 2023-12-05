@@ -15,7 +15,35 @@ body{
     margin: 0;
 }
 
+/* for humburger */
+#menu-bar {
+    display: flex; 
+    flex-direction: column;
+    cursor: pointer;
+    margin-left: auto;
+}
 
+.bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+    transition: 0.4s;
+}
+
+#menu {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+#nav {
+    display: none; 
+}
+
+#nav.show {
+    display: block; 
+}
 
 header {
     padding: 1rem;

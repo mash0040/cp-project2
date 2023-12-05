@@ -389,3 +389,9 @@ function pageCall(page) {
     getMovies(url);
   }
 }
+
+
+function menuOnClick() {
+  var nav = document.getElementById("nav");
+  nav.classList.toggle("show");
+}
