@@ -114,8 +114,6 @@ document.addEventListener("DOMContentLoaded", function () {
       clearError(descriptionError);
     }
 
-    // You can add more specific validations for the attachment if needed.
-
     if (!privacyAgree.checked && !privacyDisagree.checked) {
       showError(dotError, "Please agree or disagree to the Privacy Statement.");
     } else {
