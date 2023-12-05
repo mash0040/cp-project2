@@ -69,18 +69,17 @@ body {
 header {
     padding: 1rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
-    background-color: var(--secondary-color);
 }
 
 #menu-bar {
     display: none;
     cursor: pointer;
     margin-right: auto;
-    position: fixed; /* Fixed position to keep it on the left side */
+    position: fixed; 
     top: 0;
-    left: 20px; /* Adjust the distance from the left edge */
+    left: 20px; 
 }
 
 .bar {
@@ -119,7 +118,6 @@ header {
 
     #nav.show {
         position: static;
-        background-color: var(--background_top_left);
         width: 100%;
     }
 }
@@ -171,6 +169,7 @@ header {
     font-size: 1rem;
     color:#fff;
     font-family: inherit;
+    margin-left: auto;
 }
 
 
