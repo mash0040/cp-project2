@@ -690,18 +690,6 @@ header {
   color: #FF8906;
 }
 
-
-.detail-box.active {
-  background-color: #726969 !important;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  border-radius: 40px;
-  padding-left: 4rem;
-  padding-top: 3rem;
-  border: #0F0E17 1px solid;
-}
-
 #search-results {
   position: absolute;
   top: 100%;
