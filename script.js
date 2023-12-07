@@ -33,7 +33,6 @@ function showMovies(movies, container) {
 function showPosters(movie) {
   const { id, title, name, poster_path } = movie;
 
-  // Use a conditional (ternary) operator to determine whether to use title or name
   const movieTitle = title !== undefined ? title : name;
 
   return `<div class="card poster_card">
@@ -45,8 +44,6 @@ function showPosters(movie) {
             </div>
           </div>`;
 }
-
-
 
 gsap.from(".search", {
   scrollTrigger: ".search",
@@ -239,7 +236,7 @@ document.addEventListener("DOMContentLoaded", function () {
       "tv-genre",
       "https://api.themoviedb.org/3/genre/tv/list?language=en"
     );
-  }, 2000);
+  });
 
   const movieGenre = getCookie("movieGenre");
   const tvGenre = getCookie("tvGenre");
@@ -518,3 +515,80 @@ ball.addEventListener("click", () => {
   ball.classList.toggle("active");
 });
 
+const searchInput = document.getElementById("searchInput");
+const searchResultsContainer = document.getElementById("search-results");
+
+
+
+searchInput.addEventListener("input", debounce(handleSearch, 300));
+function handleSearch() {
+  const searchTerm = searchInput.value.trim();
+  if (searchTerm.length === 0) {
+    searchResultsContainer.style.display = "none";
+    return;
+  }
+
+  const searchUrl = `https://api.themoviedb.org/3/search/multi?api_key=${API_KEY}&query=${encodeURIComponent(
+    searchTerm
+  )}`;
+
+  fetch(searchUrl)
+    .then((response) => response.json())
+    .then((data) => {
+      if (data.results && data.results.length > 0) {
+        const limitedResults = data.results.slice(0, 4);
+        displaySearchResults(limitedResults);
+      } else {
+        displayNoResults();
+      }
+    })
+    .catch((error) => {
+      console.error("Error fetching search results:", error);
+    });
+}
+
+function displaySearchResults(results) {
+  const resultsHTML = results
+    .map((result) => generateSearchResultHTML(result))
+    .join("");
+  searchResultsContainer.innerHTML = resultsHTML;
+  searchResultsContainer.style.display = "block";
+}
+
+function generateSearchResultHTML(result) {
+  const { id, title, name, poster_path, release_date, media_type } = result;
+  const resultTitle = title || name;
+  const imageUrl = poster_path
+    ? `https://image.tmdb.org/t/p/w200${poster_path}`
+    : "https://via.placeholder.com/30x45";
+
+  const releaseDate = release_date ? ` (${release_date.substring(0, 4)})` : '';
+
+  return `
+    <div class="search-result" onclick="handleResultClick(${id}, '${media_type}')">
+      <img src="${imageUrl}" alt="${resultTitle}" />
+      <div>
+        <p>${resultTitle}</p>
+        <p class="release-date">${releaseDate}</p>
+      </div>
+    </div>
+  `;
+}
+
+function handleResultClick(id, mediaType) {
+  const detailsPage = 'moviedetails.html';
+  
+  const detailsUrl = `${detailsPage}?id=${id}`;
+  window.location.href = detailsUrl;
+}
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
