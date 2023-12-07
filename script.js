@@ -1,5 +1,5 @@
 const BASE_URL = `https://api.themoviedb.org/3`;
-const API_KEY = `cdcbdcac2837a7886f31841cf04b185d`;
+const API_KEY = `03f3d7e5f31d26394ef7b7b263260b97`;
 const TRENDING_MOVIE = `${BASE_URL}/trending/all/week?api_key=${API_KEY}`;
 const POPULAR_MOVIE = `${BASE_URL}/discover/movie?sort_by=popularity.desc&api_key=${API_KEY}`;
 const RATED_MOVIE = `${BASE_URL}/movie/top_rated?api_key=${API_KEY}`;
@@ -16,7 +16,6 @@ async function getMovies(url, container) {
     return showMovies(responseData.results, container);
   } catch (error) {
     console.error('Error fetching movies:', error);
-    // Handle error display or logging in a non-intrusive way
   }
 }
 
@@ -32,52 +31,22 @@ function showMovies(movies, container) {
 }
 
 function showPosters(movie) {
-  const { title, name, poster_path } = movie;
-  if (title !== undefined) {
-    return `<div class="card poster_card">
-                <a href="moviedetails.html"><img class="poster_img img-fluid" src="${
-                  IMAGE_URL + poster_path
-                }" alt="${title}" draggable="false"></a>
-                <div class="card-body">
-                <p class="card-text">${title}</p>
-                </div>
-            </div>`;
-  } else {
-    return `<div class="card poster_card">
-                <a href="moviedetails.html"><img class="poster_img img-fluid" src="${
-                  IMAGE_URL + poster_path
-                }" alt="${name}" draggable="false"></a>
-                <div class="card-body">
-                <p class="card-text">${name}</p>
-                </div>
-            </div>`;
-  }
+  const { id, title, name, poster_path } = movie;
+
+  // Use a conditional (ternary) operator to determine whether to use title or name
+  const movieTitle = title !== undefined ? title : name;
+
+  return `<div class="card poster_card">
+            <a href="moviedetails.html?id=${id}"><img class="poster_img img-fluid" src="${
+              IMAGE_URL + poster_path
+            }" alt="${movieTitle}" draggable="false"></a>
+            <div class="card-body">
+              <p class="card-text">${movieTitle}</p>
+            </div>
+          </div>`;
 }
 
-gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".navbar-brand, .navbar-toggler", {
-  opacity: 0,
-  duration: 0.6,
-  delay: 0.3,
-  y: 10,
-});
-
-gsap.from(".nav-item", {
-  opacity: 0,
-  duration: 0.6,
-  delay: 0.2,
-  y: 30,
-  stagger: 0.2,
-});
-
-gsap.from(".slides", {
-  scrollTrigger: ".slides",
-  opacity: 0,
-  duration: 0.6,
-  delay: 0.4,
-  y: -30,
-});
 
 gsap.from(".search", {
   scrollTrigger: ".search",
@@ -87,14 +56,6 @@ gsap.from(".search", {
   y: -30,
 });
 
-gsap.from(".link_section", {
-  scrollTrigger: ".link_section",
-  opacity: 0,
-  duration: 0.8,
-  delay: 0.8,
-  x: -20,
-  stagger: 0.6,
-});
 
 gsap.from(".title_trending", {
   scrollTrigger: ".title_trending",
@@ -162,23 +123,6 @@ gsap.from(".upcoming_container", {
   delay: 0.8,
   y: -30,
   stagger: 0.6,
-});
-
-gsap.from(".logo_footer", {
-  scrollTrigger: ".logo_footer",
-  opacity: 0,
-  duration: 0.6,
-  delay: 0.4,
-  x: -30,
-});
-
-gsap.from(".credit, .services, .contact, .download", {
-  scrollTrigger: ".credit, .services, .contact, .download",
-  opacity: 0,
-  duration: 0.8,
-  delay: 0.6,
-  y: -30,
-  stagger: 0.2,
 });
 
 gsap.from(".copyright", {
@@ -335,7 +279,7 @@ async function fetchData(genreId) {
   try {
     console.log("Fetching data for genre:", genreId);
     const apiKey = "03f3d7e5f31d26394ef7b7b263260b97";
-    const apiUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&primary_release_date.gte=2023-08-01&primary_release_date.lte=2024-01-01&sort_by=popularity.desc&with_genres=${genreId}&api_key=${apiKey}`;
+    const apiUrl = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&primary_release_date.gte=2023-08-01&primary_release_date.lte=2023-11-25&sort_by=popularity.desc&with_genres=${genreId}&api_key=${apiKey}`;
 
     const response = await fetch(apiUrl);
 
@@ -359,19 +303,26 @@ function generateMovieHTML(movie) {
           movie.poster_path
         }" alt="${movie.title}" draggable="false" />
         <div class="contents">
-          <h1>${movie.title} <span>(${new Date(
-    movie.release_date
-  ).getFullYear()})</span></h1>
-          <p class="genre">${getGenreNames(movie.genre_ids)}</p>
-          <p>${movie.overview}</p>
-          <a class="play_trailer" href="#" data-bs-toggle="modal" data-bs-target="#trailerModal" onclick="playTrailer(${
-            movie.id
-          })">
-          <span class="trailer_btn">
-          <i id='trailer_icon' class="fas fa-play"></i> <strong>Play Trailer</strong>
-        </span>
+        <div class="detail-box">
+        <h1>${movie.title} <span>(${new Date(
+            movie.release_date
+        ).getFullYear()})</span></h1>
+        <p class="genre">${getGenreNames(movie.genre_ids)}</p>
+        <i class="fa fa-star" aria-hidden="true" alt='rating'></i>
+        <span class="span">${movie.vote_average} / 10</span>
+        <p>${movie.overview}</p>
+        <a class="play_trailer" href="#" data-bs-toggle="modal" data-bs-target="#trailerModal" onclick="playTrailer(${movie.id})">
+           <span class="trailer_btn">
+              <i id='trailer_icon' class="fas fa-play"></i> <strong>Play Trailer</strong>
+           </span>
         </a>
-        </div>
+        <a class="movie_details" href="moviedetails.html?id=${movie.id}">
+           <span class="details_btn">
+              <i id='details_icon' class="fas fa-info-circle"></i> <strong>Movie Details</strong>
+           </span>
+        </a>
+     </div>
+      </div>
       </div>
     </li>
   `;
@@ -557,7 +508,7 @@ $("#nav ul li a[href='#']").click(function (event) {
 
 const ball = document.querySelector(".toggle-ball");
 const items = document.querySelectorAll(
-  ":root, body, .toggle, .contents"
+  ":root, body, .toggle, .detail-box"
 );
 
 ball.addEventListener("click", () => {
