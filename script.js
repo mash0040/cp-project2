@@ -185,6 +185,9 @@ function fetchGenres(selectId, apiUrl) {
     })
     .then((data) => {
       const genreDropdown = document.getElementById(selectId);
+
+      genreDropdown.innerHTML = "";
+
       data.genres.forEach((genre) => {
         const option = document.createElement("option");
         option.value = genre.id;
