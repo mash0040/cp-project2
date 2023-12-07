@@ -237,7 +237,7 @@ function showMovies(data) {
 }
 
 const overlayContent = document.getElementById("overlay-content");
-
+/* Open when someone clicks on the span element */
 function openNav(movie) {
   let id = movie.id;
   fetch(BASE_URL + "/movie/" + id + "/videos?" + API_KEY)
@@ -284,7 +284,7 @@ function openNav(movie) {
     });
 }
 
-
+/* Close when someone clicks on the "x" symbol inside the overlay */
 function closeNav() {
   document.getElementById("myNav").style.width = "0%";
 }
