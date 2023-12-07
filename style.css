@@ -103,13 +103,14 @@ body.active {
   display: none;
   margin-left: 16rem;
   margin-bottom: 2rem;
+  margin-top: -3rem;
 }
 
 .slides .banner_img {
   display: block;
   object-fit: cover;
   height: 25em;
-  margin-left: 15rem;
+  margin-left: 12rem;
   border-radius: 20px;
 }
 
@@ -190,6 +191,8 @@ a {
 
 .search {
   margin-top: 1.3rem;
+  position: absolute;
+  left: 30%;
 }
 
 .search_input {
@@ -199,7 +202,7 @@ a {
 
 .search_icon {
   margin-top: -1.8rem;
-  margin-left: 54.5rem;
+  margin-left: 37.5rem;
   position: absolute;
 }
 
@@ -295,8 +298,7 @@ a {
 }
 
 #logo {
-  height: 5rem;
-  margin-left: -6rem;
+  height: 60%;
   position: relative;
   z-index: 1;
 }
@@ -739,4 +741,116 @@ header {
   margin: 0;
   text-align: center;
   color: black;
+}
+
+.title_trending h2,
+.title_upcoming h2,
+.title_rated h2,
+.title_popular h2 {
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #FF8906;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.modal-content {
+  background-color: #1a1a1a;
+  color: #fff;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+#survey-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+#survey-popup {
+  background: #1a1a1a;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  text-align: left;
+  color: #fff;
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+}
+
+
+#survey-popup h2 {
+  color: black;
+  margin-bottom: 15px;
+}
+
+#survey-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+#survey-popup label {
+  color: black;
+  margin-bottom: 8px;
+}
+
+#survey-popup select,
+#survey-popup input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #1a1a1a;
+}
+#survey-popup select option {
+  color: white;
+  background-color: black;
+}
+#survey-popup button {
+  background-color: #FF8906;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#survey-popup button:hover {
+  background-color: #e53170;
+}
+
+#survey-popup h2 {
+  color: #FF8906;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  text-align: center;
+  font-family: 'Lato', sans-serif;
+}
+
+#survey-popup p {
+  color: black;
+  font-size: 1rem;
+  text-align: center;
+  margin-bottom: 20px;
 }
