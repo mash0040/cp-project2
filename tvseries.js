@@ -202,7 +202,7 @@ const genres = [
     main.innerHTML = "";
   
     data.forEach((movie) => {
-      const { title, poster_path, vote_average, overview, id } = movie;
+      const { name, poster_path, vote_average, overview, id } = movie;
       const movieEl = document.createElement("div");
       movieEl.classList.add("movie");
       movieEl.innerHTML = `
@@ -210,10 +210,10 @@ const genres = [
                poster_path
                  ? IMG_URL + poster_path
                  : "http://via.placeholder.com/1080x1580"
-             }" alt="${title}">
+             }" alt="${name}">
   
             <div class="movie-info">
-                <h3>${title}</h3>
+                <h3>${name}</h3>
                 <span class="${getColor(vote_average)}">${vote_average}</span>
             </div>
   
