@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .movie-detail {
   display: flex;
   flex-wrap: wrap;
@@ -130,3 +135,5 @@
 .movie-list .movie-title {
   text-align: center;
 }
+
+
