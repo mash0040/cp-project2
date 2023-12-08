@@ -32,7 +32,7 @@
               <li><i class="fas fa-home"></i><a href="index.html">Home</a></li>
               <li><i class="fas fa-tv"></i><a href="tvseries.html">TV Shows</a></li>
               <li><i class="fas fa-film"></i><a href="movies.html">Movies</a></li>
-              <li><i class="fas fa-info-circle"></i><a href="about.html">About Us</a></li>
+              <li><i class="fas fa-info-circle"></i><a href="About_Us.html">About Us</a></li>
               <li><i class="fas fa-address-book"></i><a href="contactUs.html">Contact Us</a></li><br>
               <li><i class="fas fa-search"></i><a href="#">Custom Result</a></li>
 
@@ -52,13 +52,12 @@
                 />
               </a> 
             </div>
-            <div class="col-md-10 search">
+            <div class="col-md-6 search">
               <input
                 type="text"
                 class="form-control search_input"
                 placeholder="Search"
               />
-              <img class="search_icon" src="icons/search.svg" alt="search" />
             </div>
             <div class="toggle">
               <i class="fas fa-sun toggle-icon"></i>
@@ -72,30 +71,45 @@
     <article class="container" page-content>
     </article>
     <footer>
-        <section id="footer">
-          <div class="container">
-            <div class="row credit">
-              <div class="col-md-3 support">
-                <h6>Support</h6>
-                <a href="#">Privacy & Policy</a>
-                <a href="#">Term & Conditions</a>
-              </div>
-              <div class="col-md-2 services">
-                <h6>Our Services</h6>
-                <a href="#">About Us</a>
-              </div>
-              <div class="col-md-3 contact">
-                <h6>Contact Us</h6>
-                <a href="#"><img src="icons/instagram.svg" alt="instagram" /></a>
-                <a href="#"><img src="icons/facebook.svg" alt="facebook" /></a>
-                <a href="#"><img src="icons/twitter.svg" alt="twitter" /></a>
-                <a href="#"><img src="icons/email.svg" alt="email" /></a>
-              </div>
+      <section id="footer">
+        <div class="container">
+          <div class="row credit">
+            <div class="col-md-3 support">
+              <h6>Support</h6>
+              <a href="#">Privacy & Policy</a>
+              <a href="#">Terms & Conditions</a>
+              <a href="#">FAQs</a>
             </div>
-            <p class="copyright">Copyright 2023 codeBros.</p>
+            <div class="col-md-2 services">
+              <h6>Our Services</h6>
+              <a href="About_Us.html">About Us</a>
+              <a href="#">Blog</a>
+            </div>
+            <div class="col-md-3 contact">
+              <h6>Contact Us</h6>
+              <a href="contactUs.html">Contact Us</a>
+              <p>Connect with us on:</p>
+              <a href="#"><img src="icons/instagram.svg" alt="instagram" /></a>
+              <a href="#"><img src="icons/facebook.svg" alt="facebook" /></a>
+              <a href="#"><img src="icons/twitter.svg" alt="twitter" /></a>
+              <a href="#"><img src="icons/email.svg" alt="email" /></a>
+            </div>
+            <div class="col-md-4 newsletter">
+              <h6>Subscribe to Our Newsletter</h6>
+              <p>Stay updated with the latest movies and TV shows. Subscribe now!</p>
+              <form>
+                <div class="input-group mb-3">
+                  <input type="email" class="form-control" placeholder="Your Email" aria-label="Your Email" aria-describedby="button-addon2">
+                  <button class="btn btn-primary" type="button" id="button-addon2">Subscribe</button>
+                </div>
+              </form>
+            </div>
           </div>
-        </section>
-      </footer>
+          <hr class="my-4">
+          <p class="copyright">© 2023 cineBro. All rights reserved.</p>
+        </div>
+      </section>
+    </footer>
       <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"

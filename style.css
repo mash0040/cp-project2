@@ -202,7 +202,7 @@ a {
 
 .search_icon {
   margin-top: -1.8rem;
-  margin-left: 37.5rem;
+  margin-left: 45.5rem;
   position: absolute;
 }
 
@@ -327,7 +327,9 @@ a {
 .contact a {
   padding-right: 1.125rem;
 }
-
+.contact a:hover {
+  color: #A7A9BE;
+}
 .contact {
   padding-left: 3rem;
 }
@@ -853,4 +855,8 @@ header {
   font-size: 1rem;
   text-align: center;
   margin-bottom: 20px;
+}
+#button-addon2 {
+  background-color: #e53170;
+  border: #e53170;
 }
