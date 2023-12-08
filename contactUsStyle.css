@@ -373,3 +373,14 @@ form .button input:hover {
     font-size: 12px; /* Optional: Adjust the font size as needed */
     margin-top: 5px; /* Optional: Adjust the margin as needed */
 }
+.contact a:hover {
+  color: #A7A9BE;
+  text-decoration: none;
+}
+.contact a {
+  color: #A7A9BE;
+}
+#button-addon2 {
+  background-color: #e53170;
+  border: #e53170;
+}
