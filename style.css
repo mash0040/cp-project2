@@ -98,10 +98,13 @@ body.active {
 
 #banner {
   padding-top: 3rem;
+  z-index: 1;
 }
+
+
 .banner-heading {
   display: none;
-  margin-left: 16rem;
+  margin-left: 13rem;
   margin-bottom: 2rem;
   margin-top: -3rem;
 }
@@ -301,6 +304,7 @@ a {
   height: 60%;
   position: relative;
   z-index: 1;
+  max-width: 100%; 
 }
 
 
@@ -333,7 +337,9 @@ a {
 .contact {
   padding-left: 3rem;
 }
-
+.contact p {
+  margin-top: 1rem;
+}
 
 .copyright {
   margin-top: 5rem;
@@ -442,7 +448,14 @@ a {
     margin-top: 100px;
   }
 }
+.social-icon {
+  font-size: 1.4rem;
+}
 
+.social-icon.active {
+  font-size: 1.4rem;
+  color: black;
+}
 #menu {
   z-index: 2;
 }
@@ -699,7 +712,7 @@ header {
   top: 100%;
   left: 10%;
   width: 50%;
-  z-index: 1000;
+  z-index: 4;
   background-color: #fff;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   display: none;
@@ -859,4 +872,10 @@ header {
 #button-addon2 {
   background-color: #e53170;
   border: #e53170;
+}
+.banner-heading.active {
+  display: none;
+  margin-left: 13rem;
+  margin-bottom: 2rem;
+  margin-top: -1.5rem;
 }

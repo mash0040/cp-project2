@@ -48,11 +48,34 @@ function showPosters(movie) {
 gsap.from(".search", {
   scrollTrigger: ".search",
   opacity: 0,
-  duration: 0.6,
-  delay: 0.4,
-  y: -30,
+  duration: 1.5,
+  delay: 0.6,
+  x: 50,
 });
 
+gsap.from("#logo", {
+  scrollTrigger: "#logo",
+  opacity: 0,
+  duration: 1.5,
+  delay: 0.6,
+  x: -50,
+});
+
+gsap.from("#survey-container", {
+  scrollTrigger: "#survey-container",
+  opacity: 0,
+  duration: 1,
+  delay: 0.8,
+  y: 30,
+});
+
+gsap.from("#banner", {
+  scrollTrigger: "#banner",
+  opacity: 0,
+  duration: 1.5,
+  delay: 0.6,
+  x: 50,
+});
 
 gsap.from(".title_trending", {
   scrollTrigger: ".title_trending",
@@ -508,7 +531,7 @@ $("#nav ul li a[href='#']").click(function (event) {
 
 const ball = document.querySelector(".toggle-ball");
 const items = document.querySelectorAll(
-  ":root, body, .toggle, .detail-box"
+  ":root, body, .toggle, .banner-heading, .social-icon, .contents"
 );
 
 ball.addEventListener("click", () => {
