@@ -1,3 +1,5 @@
+// Mert Halil Acun
+
 function initSlider(selector) {
   $(selector).slick({
     slidesToShow: 3,
@@ -15,8 +17,8 @@ function initSlider(selector) {
   });
 }
 
-const api_key = '03f3d7e5f31d26394ef7b7b263260b97';
-const imageBaseUrl = 'https://image.tmdb.org/t/p/';
+const api_key = "03f3d7e5f31d26394ef7b7b263260b97";
+const imageBaseUrl = "https://image.tmdb.org/t/p/";
 
 const fetchDataFromServer = function (url, callback, optionalParam) {
   return fetch(url)
@@ -25,7 +27,7 @@ const fetchDataFromServer = function (url, callback, optionalParam) {
 };
 
 const urlParams = new URLSearchParams(window.location.search);
-const movieId = urlParams.get('id');
+const movieId = urlParams.get("id");
 
 const pageContent = document.querySelector("[page-content]");
 
@@ -34,7 +36,7 @@ const getGenres = function (genreList) {
   for (const { name } of genreList) {
     newGenreList.push(name);
   }
-  return newGenreList.join(', ');
+  return newGenreList.join(", ");
 };
 
 const getCasts = function (castList) {
@@ -43,22 +45,22 @@ const getCasts = function (castList) {
     const { name } = castList[i];
     newCastList.push(name);
   }
-  return newCastList.join(', ');
+  return newCastList.join(", ");
 };
 
 const getDirectors = function (crewList) {
-  const directors = crewList.filter(({ job }) => job === 'Director');
+  const directors = crewList.filter(({ job }) => job === "Director");
   const directorList = [];
   for (const { name } of directors) {
     directorList.push(name);
   }
-  return directorList.join(', ');
+  return directorList.join(", ");
 };
 
 const filterVideos = function (videoList) {
   return videoList.filter(
     ({ type, site }) =>
-      (type === 'Trailer' || type === 'Teaser') && site === 'YouTube'
+      (type === "Trailer" || type === "Teaser") && site === "YouTube"
   );
 };
 
@@ -86,8 +88,8 @@ async function fetchAndDisplayMovieDetails() {
 
     document.title = `${title} - cineBro.`;
 
-    const movieDetail = document.createElement('div');
-    movieDetail.classList.add('movie-detail');
+    const movieDetail = document.createElement("div");
+    movieDetail.classList.add("movie-detail");
 
     movieDetail.innerHTML = `
 
@@ -106,7 +108,7 @@ async function fetchAndDisplayMovieDetails() {
             <div class="separator"></div>
             <div class="meta-item">${runtime} minutes</div>
             <div class="separator"></div>
-            <div class="meta-item">${release_date.split('-')[0]}</div>
+            <div class="meta-item">${release_date.split("-")[0]}</div>
             <div class="meta-item card-badge">${certification}</div>
           </div>
           <p class="genre">${getGenres(genres)}</p>
@@ -125,8 +127,8 @@ async function fetchAndDisplayMovieDetails() {
         </div>
     `;
 
-    const trailerContent = document.createElement('div');
-    trailerContent.classList.add('trailer-content');
+    const trailerContent = document.createElement("div");
+    trailerContent.classList.add("trailer-content");
     trailerContent.innerHTML = `
     <div class="title-wrapper">
       <h3 class="title-large">Trailer and Clips</h3>
@@ -135,13 +137,13 @@ async function fetchAndDisplayMovieDetails() {
       <div id="trailerCarousel" class="carousel2">
         <div class="slider-inner"></div>
       </div>
-    </div>`
+    </div>`;
 
-    const sliderInner = trailerContent.querySelector('#trailerCarousel');
-  
+    const sliderInner = trailerContent.querySelector("#trailerCarousel");
+
     for (const { key, name } of filterVideos(videos)) {
-      const videoCard = document.createElement('div');
-      videoCard.classList.add('video-card');
+      const videoCard = document.createElement("div");
+      videoCard.classList.add("video-card");
       videoCard.innerHTML = `
         <iframe width="500" height="294" src="https://www.youtube.com/embed/${key}?&theme=dark&color=white&rel=0" frameborder="0" allowfullscreen="1" title="${name}" class="img-cover" preload="auto"></iframe>
       `;
@@ -172,14 +174,14 @@ async function fetchAndDisplayMovieDetails() {
       addSuggestedMovies
     );
   } catch (error) {
-    console.error('Error fetching and displaying movie details:', error);
+    console.error("Error fetching and displaying movie details:", error);
   }
 }
 
 const addSuggestedMovies = function ({ results: movieList }) {
-  const movieListElem = document.createElement('section');
-  movieListElem.classList.add('movie-list');
-  movieListElem.ariaLabel = 'You may Also Like';
+  const movieListElem = document.createElement("section");
+  movieListElem.classList.add("movie-list");
+  movieListElem.ariaLabel = "You may Also Like";
 
   movieListElem.innerHTML = `
     <div class="title-wrapper">
@@ -192,11 +194,11 @@ const addSuggestedMovies = function ({ results: movieList }) {
     </div>
   `;
 
-  const sliderInner = movieListElem.querySelector('.slider-inner');
+  const sliderInner = movieListElem.querySelector(".slider-inner");
 
   for (const movie of movieList) {
-    const movieCard = document.createElement('div');
-    movieCard.classList.add('movie-card');
+    const movieCard = document.createElement("div");
+    movieCard.classList.add("movie-card");
 
     movieCard.innerHTML = `
       <a href="moviedetails.html?id=${movie.id}">
@@ -210,10 +212,10 @@ const addSuggestedMovies = function ({ results: movieList }) {
 
   pageContent.appendChild(movieListElem);
 
-  const selector = '#recommendationsCarousel .slider-inner';
+  const selector = "#recommendationsCarousel .slider-inner";
   if (document.querySelector(selector)) {
     initSlider(selector);
   }
 };
 
-document.addEventListener('DOMContentLoaded', fetchAndDisplayMovieDetails);
+document.addEventListener("DOMContentLoaded", fetchAndDisplayMovieDetails);

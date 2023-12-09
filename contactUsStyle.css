@@ -1,10 +1,12 @@
+/* Michael Villaflor */
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 
 :root {
   --top_navbar: 1.5rem;
-  --background_top_left: #0F0E17;
-  --background_bottom_right: #0F0E17;
-  --font_color: #A7A9BE;
+  --background_top_left: #0f0e17;
+  --background_bottom_right: #0f0e17;
+  --font_color: #a7a9be;
   --search_color: #101223;
   --regular: 400;
   --semibold: 600;
@@ -25,7 +27,7 @@
   --headline_color: #ffffff;
   --secondary_color: #f25f4c;
   --tertiary_color: #e53170;
-  --button_color: #FF8906;
+  --button_color: #ff8906;
 }
 
 * {
@@ -36,7 +38,11 @@
 }
 
 body {
-  background: linear-gradient(to bottom right, var(--background_top_left), var(--background_bottom_right));
+  background: linear-gradient(
+    to bottom right,
+    var(--background_top_left),
+    var(--background_bottom_right)
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
@@ -85,7 +91,6 @@ body {
   margin-top: 12rem;
 }
 
-
 .credit h6 {
   color: var(--font_color);
   font-size: var(--fonts_head_footer);
@@ -109,7 +114,6 @@ body {
   padding-left: 3rem;
 }
 
-
 .copyright {
   margin-top: 5rem;
   margin-bottom: 1rem;
@@ -131,7 +135,7 @@ body {
 .bar {
   height: 5px;
   width: 100%;
-  background-color: #FF8906;
+  background-color: #ff8906;
   display: block;
   border-radius: 5px;
   transition: 0.3s ease;
@@ -169,7 +173,8 @@ body {
   font-weight: bold;
 }
 
-.menu-bg, #menu {
+.menu-bg,
+#menu {
   top: 0;
   left: 0;
   position: absolute;
@@ -180,7 +185,7 @@ body {
   width: 0;
   height: 0;
   margin: 30px 0 20px 40px;
-  background: radial-gradient(circle, #f39122, #FF8906);
+  background: radial-gradient(circle, #f39122, #ff8906);
   border-radius: 50%;
   transition: 0.3s ease;
 }
@@ -212,7 +217,7 @@ body {
 }
 
 .close-button {
- margin-left: 66rem;
+  margin-left: 66rem;
   top: 1rem;
   font-size: 3rem;
 }
@@ -224,161 +229,161 @@ body {
 }
 
 main {
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    height: 120vh;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 10px;
-    border-radius: 15px;
-    padding: 10px;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  height: 120vh;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding: 10px;
 }
 
 .formContainer {
-    margin-top: 100px;
-    max-width: 700px;
-    width: 100%;
-    background: transparent;
-    border: 2px solid rgba(255, 255, 255, .2);
-    backdrop-filter: blur(20px);
-    box-shadow: 0 0 10px rgba(0, 0, 0, .2);
-    border-radius: 10px;
-    color: #fff ;
-    padding: 25px 30px;
+  margin-top: 100px;
+  max-width: 700px;
+  width: 100%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  color: #fff;
+  padding: 25px 30px;
 }
 
 .formContainer .title {
-    font-size: 25px;
-    font-weight: 500;
-    position: relative;
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
 }
 
 .formContainer .title::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 3px;
-    width: 30px;
-    background: linear-gradient(135deg, #000000, #ff8906);
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background: linear-gradient(135deg, #000000, #ff8906);
 }
 
 .formContainer form .clienInformation {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin: 20px 0 12px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
 }
 
 form .clienInformation .inputBox {
-    margin-bottom: 15px;
-    width: calc(100% / 2 - 20px);
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
 }
 
 .clienInformation .inputBox .details {
-    display: block;
-    font-weight: 500;
-    margin-bottom: 5px;
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .clienInformation .inputBox input {
-    height: 45px;
-    width: 100%;
-    outline: none;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-    padding-left: 15px;
-    font-size: 16px;
-    border-bottom-width: 2px;
-    transition: all 0.3s ease;
+  height: 45px;
+  width: 100%;
+  outline: none;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding-left: 15px;
+  font-size: 16px;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
 }
 
 .clienInformation .inputBox input:focus,
 .clienInformation .inputBox input:valid {
-    border-color: white;
+  border-color: white;
 }
 
 form .clientType .clientTypeTitle {
-    font-size: 20px;
-    font-weight: 500;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 form .clientType .category {
-    display: flex;
-    width: 80%;
-    margin: 14px 0;
-    justify-content: space-between;
+  display: flex;
+  width: 80%;
+  margin: 14px 0;
+  justify-content: space-between;
 }
 
 .clientType .category label {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .clientType .category .dot {
-    height: 18px;
-    width: 18px;
-    background: #d9d9d9;
-    border-radius: 50%;
-    margin-right: 10px;
-    border:  5px solid transparent;
-    transition: all 0.3s ease;
+  height: 18px;
+  width: 18px;
+  background: #d9d9d9;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
 }
 
 #dot-1:checked ~ .category label .one,
 #dot-2:checked ~ .category label .two,
 #dot-3:checked ~ .category label .three {
-    border-color: #d9d9d9;
-    background: linear-gradient(135deg, #000000, #ff8906); 
+  border-color: #d9d9d9;
+  background: linear-gradient(135deg, #000000, #ff8906);
 }
 
 form input[type="radio"] {
-    display: none;
+  display: none;
 }
 
-form .button{
-    height: 45px;
-    margin: 45px 0;
+form .button {
+  height: 45px;
+  margin: 45px 0;
 }
 
 form .button input {
-    height: 100%;
-    width: 100%;
-    outline: #fff;
-    border: none;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 5px;
-    letter-spacing: 1px;
-    background: linear-gradient(135deg, #000000, #ff8906);
-    color: #fff;
+  height: 100%;
+  width: 100%;
+  outline: #fff;
+  border: none;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  letter-spacing: 1px;
+  background: linear-gradient(135deg, #000000, #ff8906);
+  color: #fff;
 }
 
 form .button input:hover {
-    background: linear-gradient(-135deg, #000000, #ff8906);
+  background: linear-gradient(-135deg, #000000, #ff8906);
 }
 
 #desciption {
-    height: 120px;
-    justify-content: baseline;
+  height: 120px;
+  justify-content: baseline;
 }
 .error {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 
 #dotError {
-    color: red;
-    font-size: 12px;
-    margin-top: 5px;
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
 }
 .contact a:hover {
-  color: #A7A9BE;
+  color: #a7a9be;
   text-decoration: none;
 }
 .contact a {
-  color: #A7A9BE;
+  color: #a7a9be;
 }
 #button-addon2 {
   background-color: #e53170;

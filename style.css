@@ -1,10 +1,14 @@
+/* Mert Halil Acun 
+   Ekene Masha
+*/
+
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400&display=swap");
 
 :root {
   --top_navbar: 1.5rem;
-  --background_top_left: #0F0E17;
-  --background_bottom_right: #0F0E17;
-  --font_color: #A7A9BE;
+  --background_top_left: #0f0e17;
+  --background_bottom_right: #0f0e17;
+  --font_color: #a7a9be;
   --search_color: #101223;
   --regular: 400;
   --semibold: 600;
@@ -25,16 +29,15 @@
   --headline_color: #ffffff;
   --secondary_color: #f25f4c;
   --tertiary_color: #e53170;
-  --button_color: #FF8906;
+  --button_color: #ff8906;
 }
 
 :root.active {
-  --font_color: #0F0E17;
-  --headline_color: #0F0E17;
+  --font_color: #0f0e17;
+  --headline_color: #0f0e17;
   --background_top_left: #white;
   --background_bottom_right: #white;
 }
-
 
 * {
   box-sizing: border-box;
@@ -43,13 +46,17 @@
 }
 
 body {
-  background: linear-gradient(to bottom right, var(--background_top_left), var(--background_bottom_right));
+  background: linear-gradient(
+    to bottom right,
+    var(--background_top_left),
+    var(--background_bottom_right)
+  );
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
 body.active {
-    background-color: white;
+  background-color: white;
 }
 *:not(.movie_details) {
   color: var(--font_color);
@@ -100,7 +107,6 @@ body.active {
   padding-top: 3rem;
   z-index: 1;
 }
-
 
 .banner-heading {
   display: none;
@@ -153,12 +159,12 @@ body.active {
   margin-top: 2.5rem;
 }
 .trailer_btn strong {
-  color: #FF8906;
+  color: #ff8906;
 }
 
 #trailer_icon {
   font-size: 1.1rem;
-  color: #FF8906;
+  color: #ff8906;
 }
 
 .trailer_btn:hover {
@@ -191,7 +197,6 @@ a {
   height: 25rem;
 }
 
-
 .search {
   margin-top: 1.3rem;
   position: absolute;
@@ -208,7 +213,6 @@ a {
   margin-left: 45.5rem;
   position: absolute;
 }
-
 
 .poster_container {
   display: flex;
@@ -304,14 +308,12 @@ a {
   height: 60%;
   position: relative;
   z-index: 1;
-  max-width: 100%; 
+  max-width: 100%;
 }
-
 
 #footer {
   margin-top: 6rem;
 }
-
 
 .credit h6 {
   color: var(--font_color);
@@ -332,7 +334,7 @@ a {
   padding-right: 1.125rem;
 }
 .contact a:hover {
-  color: #A7A9BE;
+  color: #a7a9be;
 }
 .contact {
   padding-left: 3rem;
@@ -368,7 +370,7 @@ a {
     max-width: 200px;
     line-height: 20px;
   }
-  
+
   .contents .genre {
     font-size: 5px;
     margin-top: 8px;
@@ -387,7 +389,6 @@ a {
     margin-top: -10px !important;
     max-width: 65px;
   }
-
 
   .title_trending h1,
   .title_rated h1,
@@ -470,7 +471,7 @@ a {
 .bar {
   height: 5px;
   width: 100%;
-  background-color: #FF8906;
+  background-color: #ff8906;
   display: block;
   border-radius: 5px;
   transition: 0.3s ease;
@@ -508,7 +509,8 @@ a {
   font-weight: bold;
 }
 
-.menu-bg, #menu {
+.menu-bg,
+#menu {
   top: 0;
   left: 0;
   position: absolute;
@@ -519,7 +521,7 @@ a {
   width: 0;
   height: 0;
   margin: 30px 0 20px 40px;
-  background: radial-gradient(circle, #f39122, #FF8906);
+  background: radial-gradient(circle, #f39122, #ff8906);
   border-radius: 50%;
   transition: 0.3s ease;
 }
@@ -632,7 +634,7 @@ a {
   order: 2;
 }
 .close-button {
- margin-left: 66rem;
+  margin-left: 66rem;
   top: 1rem;
   font-size: 3rem;
 }
@@ -659,7 +661,7 @@ header {
   top: 50%;
   transform: translateY(-50%);
   right: 5rem;
-  border:#fff solid 0.1rem;
+  border: #fff solid 0.1rem;
 }
 
 .toggle-icon {
@@ -674,7 +676,7 @@ header {
   right: 3px;
   border-radius: 50%;
   cursor: pointer;
-  transition: 1s ease all;  
+  transition: 1s ease all;
 }
 
 .toggle.active {
@@ -700,11 +702,12 @@ header {
 .movie_details:hover {
   background-color: #d81b60;
 }
-.movie_details strong, #details_icon {
+.movie_details strong,
+#details_icon {
   color: white;
 }
 .fa-star {
-  color: #FF8906;
+  color: #ff8906;
 }
 
 #search-results {
@@ -771,7 +774,7 @@ header {
   right: 1rem;
   font-size: 2rem;
   color: #fff;
-  background-color: #FF8906;
+  background-color: #ff8906;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   cursor: pointer;
@@ -810,7 +813,6 @@ header {
   padding: 20px;
 }
 
-
 #survey-popup h2 {
   color: black;
   margin-bottom: 15px;
@@ -820,7 +822,6 @@ header {
   display: flex;
   flex-direction: column;
 }
-
 
 #survey-popup label {
   color: black;
@@ -843,7 +844,7 @@ header {
   background-color: black;
 }
 #survey-popup button {
-  background-color: #FF8906;
+  background-color: #ff8906;
   color: #fff;
   padding: 10px;
   border: none;
@@ -856,11 +857,11 @@ header {
 }
 
 #survey-popup h2 {
-  color: #FF8906;
+  color: #ff8906;
   font-size: 2rem;
   margin-bottom: 15px;
   text-align: center;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 #survey-popup p {

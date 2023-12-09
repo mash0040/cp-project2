@@ -1,3 +1,6 @@
+// Mert Halil Acun
+// Ekene Masha
+
 const BASE_URL = `https://api.themoviedb.org/3`;
 const API_KEY = `03f3d7e5f31d26394ef7b7b263260b97`;
 const TRENDING_MOVIE = `${BASE_URL}/trending/all/week?api_key=${API_KEY}`;
@@ -15,7 +18,7 @@ async function getMovies(url, container) {
     const responseData = await response.json();
     return showMovies(responseData.results, container);
   } catch (error) {
-    console.error('Error fetching movies:', error);
+    console.error("Error fetching movies:", error);
   }
 }
 
@@ -37,8 +40,8 @@ function showPosters(movie) {
 
   return `<div class="card poster_card">
             <a href="moviedetails.html?id=${id}"><img class="poster_img img-fluid" src="${
-              IMAGE_URL + poster_path
-            }" alt="${movieTitle}" draggable="false"></a>
+    IMAGE_URL + poster_path
+  }" alt="${movieTitle}" draggable="false"></a>
             <div class="card-body">
               <p class="card-text">${movieTitle}</p>
             </div>
@@ -328,13 +331,15 @@ function generateMovieHTML(movie) {
         <div class="contents">
         <div class="detail-box">
         <h1>${movie.title} <span>(${new Date(
-            movie.release_date
-        ).getFullYear()})</span></h1>
+    movie.release_date
+  ).getFullYear()})</span></h1>
         <p class="genre">${getGenreNames(movie.genre_ids)}</p>
         <i class="fa fa-star" aria-hidden="true" alt='rating'></i>
         <span class="span">${movie.vote_average} / 10</span>
         <p>${movie.overview}</p>
-        <a class="play_trailer" href="#" data-bs-toggle="modal" data-bs-target="#trailerModal" onclick="playTrailer(${movie.id})">
+        <a class="play_trailer" href="#" data-bs-toggle="modal" data-bs-target="#trailerModal" onclick="playTrailer(${
+          movie.id
+        })">
            <span class="trailer_btn">
               <i id='trailer_icon' class="fas fa-play"></i> <strong>Play Trailer</strong>
            </span>
@@ -544,8 +549,6 @@ ball.addEventListener("click", () => {
 const searchInput = document.getElementById("searchInput");
 const searchResultsContainer = document.getElementById("search-results");
 
-
-
 searchInput.addEventListener("input", debounce(handleSearch, 300));
 function handleSearch() {
   const searchTerm = searchInput.value.trim();
@@ -588,7 +591,7 @@ function generateSearchResultHTML(result) {
     ? `https://image.tmdb.org/t/p/w200${poster_path}`
     : "https://via.placeholder.com/30x45";
 
-  const releaseDate = release_date ? ` (${release_date.substring(0, 4)})` : '';
+  const releaseDate = release_date ? ` (${release_date.substring(0, 4)})` : "";
 
   return `
     <div class="search-result" onclick="handleResultClick(${id}, '${media_type}')">
@@ -602,8 +605,8 @@ function generateSearchResultHTML(result) {
 }
 
 function handleResultClick(id, mediaType) {
-  const detailsPage = 'moviedetails.html';
-  
+  const detailsPage = "moviedetails.html";
+
   const detailsUrl = `${detailsPage}?id=${id}`;
   window.location.href = detailsUrl;
 }

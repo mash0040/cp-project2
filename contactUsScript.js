@@ -1,28 +1,30 @@
+// Michael Villaflor
+
 (function () {
-    gsap.registerPlugin(ScrollTrigger);
-  
-    gsap.from(".navbar-brand, .navbar-toggler", {
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.3,
-      y: 10,
-    });
-  
-    gsap.from(".nav-item", {
-      opacity: 0,
-      duration: 0.6,
-      delay: 0.2,
-      y: 30,
-      stagger: 0.2,
-    });
-})
-  
-    // Function to toggle the navigation bar
-    function menuOnClick() {
-      document.getElementById("menu-bar").classList.toggle("change");
-      document.getElementById("nav").classList.toggle("change");
-      document.getElementById("menu-bg").classList.toggle("change-bg");
-    }
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.from(".navbar-brand, .navbar-toggler", {
+    opacity: 0,
+    duration: 0.6,
+    delay: 0.3,
+    y: 10,
+  });
+
+  gsap.from(".nav-item", {
+    opacity: 0,
+    duration: 0.6,
+    delay: 0.2,
+    y: 30,
+    stagger: 0.2,
+  });
+});
+
+// Function to toggle the navigation bar
+function menuOnClick() {
+  document.getElementById("menu-bar").classList.toggle("change");
+  document.getElementById("nav").classList.toggle("change");
+  document.getElementById("menu-bg").classList.toggle("change-bg");
+}
 
 // Form Validation
 
@@ -114,7 +116,6 @@ document.addEventListener("DOMContentLoaded", function () {
       clearError(descriptionError);
     }
 
-
     if (!privacyAgree.checked && !privacyDisagree.checked) {
       showError(dotError, "Please agree or disagree to the Privacy Statement.");
     } else {
@@ -124,16 +125,16 @@ document.addEventListener("DOMContentLoaded", function () {
     return isValid;
   }
 
-  document.querySelector("#movieReviewForm").addEventListener("submit", function (event) {
-    if (!validateForm()) {
-      event.preventDefault();
-    }
-  });
+  document
+    .querySelector("#movieReviewForm")
+    .addEventListener("submit", function (event) {
+      if (!validateForm()) {
+        event.preventDefault();
+      }
+    });
 
   function validateEmail(email) {
     const regex = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/;
     return regex.test(email);
   }
 });
-
-

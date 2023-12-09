@@ -1,3 +1,5 @@
+/* Mert Halil Acun */
+
 body {
   margin: 0;
   padding: 0;
@@ -56,7 +58,7 @@ body {
 }
 
 .card-badge {
-  background-color: #FF8906;
+  background-color: #ff8906;
   color: #343a40;
   padding: 5px;
   border-radius: 3px;
@@ -109,16 +111,19 @@ body {
   padding: 15px;
 }
 
-.carousel2 .slick-prev, .carousel2 .slick-next,
-.carousel .slick-prev, .carousel .slick-next {
+.carousel2 .slick-prev,
+.carousel2 .slick-next,
+.carousel .slick-prev,
+.carousel .slick-next {
   top: 40%;
 }
+
 .carousel .slick-prev:before,
 .carousel .slick-next:before,
 .carousel2 .slick-prev:before,
 .carousel2 .slick-next:before {
   font-size: 6rem;
-  color: #FF8906;
+  color: #ff8906;
 }
 
 .slick-prev {
@@ -132,8 +137,7 @@ body {
 .movie-list .img-cover {
   width: 16rem;
 }
+
 .movie-list .movie-title {
   text-align: center;
 }
-
-
